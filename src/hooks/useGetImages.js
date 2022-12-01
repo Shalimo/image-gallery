@@ -3,7 +3,7 @@ const auth = "563492ad6f91700001000001d47e50555c46469eb1cf693bfd97be76";
 const initURL = "https://api.pexels.com/v1/search?query=dog";
 
 export const useGetImages = () => {
-  const [category, setCategory] = useState("dog");
+  const [category, setCategory] = useState("summer");
   const [images, setImages] = useState([]);
   const [concatImages, setConcatImages] = useState([]);
 

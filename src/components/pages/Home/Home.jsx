@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useGetImages } from "../../../hooks/useGetImages";
+import style from "./Home.module.scss";
 
 const Home = () => {
   const { concatImages, getImages, category, setCategory, onKeyDownHandler } =
@@ -10,16 +11,18 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className={style.container}>
       <input
         onKeyDown={onKeyDownHandler}
         placeholder="Search"
         onChange={(e) => setCategory(e.target.value)}
         value={category}
       />
-      <div>
+      <div className={style.imgContainer}>
         {concatImages?.map((item) => (
-          <img key={item.id} src={item.src.medium} />
+          <div className={style.image} key={item.id}>
+            <img src={item.src.large} />
+          </div>
         ))}
       </div>
       <button onClick={getImages}>More</button>

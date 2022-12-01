@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#89609E] overflow-x-hidden;
+  @apply bg-slate-500 overflow-x-hidden;
   @apply p-0 m-0;
 }

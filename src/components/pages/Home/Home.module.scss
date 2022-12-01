@@ -1,0 +1,12 @@
+.imgContainer {
+  @apply grid grid-cols-4 justify-items-center;
+}
+
+.image {
+  @apply w-[370px] h-[370px];
+  @apply mb-14;
+
+  img {
+    @apply w-[370px] h-[370px]  rounded-md;
+  }
+}
