@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useGetImages } from "../../../hooks/useGetImages";
 
 const Home = () => {
-  const { images, getImages, category, setCategory, onKeyDownHandler } =
+  const { concatImages, getImages, category, setCategory, onKeyDownHandler } =
     useGetImages();
 
   useEffect(() => {
@@ -18,10 +18,11 @@ const Home = () => {
         value={category}
       />
       <div>
-        {images?.photos?.map((item) => (
+        {concatImages?.map((item) => (
           <img key={item.id} src={item.src.medium} />
         ))}
       </div>
+      <button onClick={getImages}>More</button>
     </div>
   );
 };

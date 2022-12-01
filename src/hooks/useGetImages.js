@@ -1,22 +1,29 @@
 import { useState } from "react";
-const auth = "563492ad6f9170000100000170505e6caef24d0d8539f5c95c26d05b";
+const auth = "563492ad6f91700001000001d47e50555c46469eb1cf693bfd97be76";
 const initURL = "https://api.pexels.com/v1/search?query=dog";
 
 export const useGetImages = () => {
   const [category, setCategory] = useState("dog");
   const [images, setImages] = useState([]);
+  const [concatImages, setConcatImages] = useState([]);
 
   const getImages = async () => {
-    await fetch(`https://api.pexels.com/v1/search?query=${category}`, {
-      headers: {
-        Authorization: auth,
-      },
-    })
+    await fetch(
+      images?.next_page
+        ? images?.next_page
+        : `https://api.pexels.com/v1/search?query=${category}`,
+      {
+        headers: {
+          Authorization: auth,
+        },
+      }
+    )
       .then((data) => {
         return data.json();
       })
       .then((result) => {
         setImages(result);
+        setConcatImages([...concatImages, ...result.photos]);
       });
   };
 
@@ -26,5 +33,5 @@ export const useGetImages = () => {
     }
   };
 
-  return { images, getImages, category, setCategory, onKeyDownHandler };
+  return { concatImages, getImages, category, setCategory, onKeyDownHandler };
 };
