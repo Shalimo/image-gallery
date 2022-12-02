@@ -1,0 +1,16 @@
+.container {
+  @apply bg-[#89609E] h-[67px] border-b-[#fff] border-b-[1px];
+  @apply flex flex-row justify-between items-center;
+
+  h1 {
+    @apply flex items-center ml-10 text-[#fff] font-semibold text-lg;
+  }
+
+  input {
+    @apply opacity-90 bg-slate-50 rounded-md pl-4 h-10 ml-auto mr-10;
+  }
+
+  img {
+    @apply w-[45px] h-[45px] rounded-full mr-10 flex;
+  }
+}
