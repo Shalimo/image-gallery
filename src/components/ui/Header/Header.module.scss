@@ -1,3 +1,5 @@
+@import '../../../assets/styles/media';
+
 .container {
 	h1 {
 		@apply text-center text-4xl font-semibold;
@@ -5,9 +7,15 @@
 
 	.subTitle {
 		@apply flex flex-row justify-between items-center ml-[10px] mr-[10px] mt-6;
+		@include media(mobile) {
+			@apply flex-col;
+		}
 
 		input {
 			@apply opacity-90 bg-slate-50 rounded-md pl-4 h-10 w-52;
+			@include media(mobile) {
+				@apply mt-5;
+			}
 		}
 
 		h2 {
