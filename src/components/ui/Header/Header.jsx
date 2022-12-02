@@ -4,18 +4,18 @@ import style from './Header.module.scss'
 const Header = ({ onKeyDown, onChange, value, categoryText }) => {
 	return (
 		<div className={style.container}>
-			<h1>Image gallery</h1>
+			<h1>Image Gallery</h1>
 			<div className={style.subTitle}>
 				<h2>
 					{categoryText.length === 0
-						? 'Enter your request...'
+						? 'Enter a request...'
 						: `Your request: ${categoryText}`}
 				</h2>
 				<input
 					onKeyDown={onKeyDown}
 					placeholder="Search Images..."
 					onChange={e => onChange(e.target.value)}
-					value={value}
+					value={'' || value}
 				/>
 			</div>
 		</div>

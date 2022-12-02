@@ -2,17 +2,22 @@ import { useState } from 'react'
 const auth = '563492ad6f9170000100000112ea80bd3b5646778fec532774e48b71'
 
 export const useGetImages = () => {
-	const [category, setCategory] = useState('summer')
+	const [category, setCategory] = useState('')
 	const [images, setImages] = useState([])
 	const [categoryText, setCategoryText] = useState('')
 	const [concatImages, setConcatImages] = useState([])
 
 	const getImages = async () => {
-		await fetch(`https://api.pexels.com/v1/search?query=${category}`, {
-			headers: {
-				Authorization: auth
+		await fetch(
+			`https://api.pexels.com/v1/search?query=${
+				category.length === 0 ? 'summer' : category
+			}`,
+			{
+				headers: {
+					Authorization: auth
+				}
 			}
-		})
+		)
 			.then(data => {
 				return data.json()
 			})
@@ -46,6 +51,7 @@ export const useGetImages = () => {
 		if (e.keyCode === 13) {
 			getImages()
 			setCategoryText(e.target.value)
+			setCategory('')
 		}
 	}
 
