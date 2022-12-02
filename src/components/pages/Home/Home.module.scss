@@ -1,11 +1,66 @@
+.container {
+	@apply w-full min-h-[100vh] mt-[100px] mb-[100px];
+	@apply flex justify-center items-center;
+}
+
+.section {
+	@apply text-center bg-slate-200 w-full max-w-[900px];
+	@apply pt-[30px] pb-[30px] pl-[20px] pr-[20px] rounded-md;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+	.projectButton {
+		@apply bg-transparent border-[2px] border-solid border-[#000] rounded-[0.6em];
+		@apply text-[1rem] font-semibold leading-4 uppercase;
+		@apply mt-[20px] pt-[0.7em] pb-[0.7em] pl-[2.8em] pr-[2.8em];
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	.projectButton:focus {
+		@apply text-[#000] outline-none;
+	}
+
+	.projectButton:hover {
+		box-shadow: 0 0 40px 40px #9fb0c8 inset;
+	}
+
+	.projectButton {
+		-webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+		transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+	}
+}
+
 .imgContainer {
-  @apply grid grid-cols-3 justify-items-center pt-36;
+	@apply grid grid-cols-3 justify-items-center;
 }
 
 .image {
-  @apply w-[370px] h-[370px] mb-12;
+	@apply relative w-[270px] h-[270px] rounded-md overflow-hidden m-[30px];
 
-  img {
-    @apply w-[370px] h-[370px] rounded-md;
-  }
+	img {
+		@apply w-[270px] h-[270px];
+		-webkit-transition: all 0.5s linear;
+		-moz-transition: all 0.5s linear;
+		-o-transition: all 0.5s linear;
+		-ms-transition: all 0.5s linear;
+		transition: 0.5s linear all;
+	}
+
+	img:hover {
+		transform: scale(1.1) rotate(5deg);
+		transition: 0.5s linear all;
+		-webkit-transition: all 0.5s linear;
+		-moz-transition: all 0.5s linear;
+		-o-transition: all 0.5s linear;
+		-ms-transition: all 0.5s linear;
+	}
+
+	p {
+		@apply text-center absolute text-[#fff] w-full bg-[#00000040];
+		@apply bottom-[-70px] left-0 text-xl;
+		transition: 0.5s ease-in-out bottom;
+	}
+
+	&:hover p {
+		@apply bottom-0;
+	}
 }
