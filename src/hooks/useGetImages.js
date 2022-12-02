@@ -6,8 +6,10 @@ export const useGetImages = () => {
 	const [images, setImages] = useState([])
 	const [categoryText, setCategoryText] = useState('')
 	const [concatImages, setConcatImages] = useState([])
+	const [loading, setLoading] = useState(false)
 
 	const getImages = async () => {
+		setLoading(true)
 		await fetch(
 			`https://api.pexels.com/v1/search?query=${
 				category.length === 0 ? 'summer' : category
@@ -24,6 +26,7 @@ export const useGetImages = () => {
 			.then(result => {
 				setImages(result)
 				setConcatImages(result.photos)
+				setLoading(false)
 			})
 	}
 
@@ -63,6 +66,7 @@ export const useGetImages = () => {
 		setCategory,
 		onKeyDownHandler,
 		nextPage,
-		categoryText
+		categoryText,
+		loading
 	}
 }
