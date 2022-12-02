@@ -4,6 +4,7 @@ const auth = '563492ad6f9170000100000112ea80bd3b5646778fec532774e48b71'
 export const useGetImages = () => {
 	const [category, setCategory] = useState('summer')
 	const [images, setImages] = useState([])
+	const [categoryText, setCategoryText] = useState('')
 	const [concatImages, setConcatImages] = useState([])
 
 	const getImages = async () => {
@@ -44,6 +45,7 @@ export const useGetImages = () => {
 	const onKeyDownHandler = e => {
 		if (e.keyCode === 13) {
 			getImages()
+			setCategoryText(e.target.value)
 		}
 	}
 
@@ -54,6 +56,7 @@ export const useGetImages = () => {
 		category,
 		setCategory,
 		onKeyDownHandler,
-		nextPage
+		nextPage,
+		categoryText
 	}
 }

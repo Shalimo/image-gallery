@@ -10,7 +10,8 @@ const Home = () => {
 		category,
 		setCategory,
 		onKeyDownHandler,
-		nextPage
+		nextPage,
+		categoryText
 	} = useGetImages()
 
 	useEffect(() => {
@@ -25,6 +26,7 @@ const Home = () => {
 						onKeyDown={onKeyDownHandler}
 						onChange={setCategory}
 						value={category}
+						categoryText={categoryText}
 					/>
 					<div className={style.imgContainer}>
 						{concatImages?.map(item => (

@@ -1,16 +1,17 @@
 .container {
-	@apply bg-slate-500 h-auto p-[18px] border-b-[#fff] border-b-[1px] w-full z-10;
-	@apply flex flex-row justify-between items-center;
-
 	h1 {
-		@apply flex items-center ml-10 text-[#fff] font-semibold text-lg;
+		@apply text-center text-4xl font-semibold;
 	}
 
-	input {
-		@apply opacity-90 bg-slate-50 rounded-md pl-4 h-10 ml-auto mr-10;
-	}
+	.subTitle {
+		@apply flex flex-row justify-between items-center ml-[10px] mr-[10px] mt-6;
 
-	img {
-		@apply w-[45px] h-[45px] rounded-full mr-10 flex;
+		input {
+			@apply opacity-90 bg-slate-50 rounded-md pl-4 h-10 w-52;
+		}
+
+		h2 {
+			@apply text-center text-xl font-semibold;
+		}
 	}
 }
