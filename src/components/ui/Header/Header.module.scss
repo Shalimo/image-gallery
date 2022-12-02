@@ -1,5 +1,5 @@
 .container {
-  @apply bg-[#89609E] h-[67px] border-b-[#fff] border-b-[1px];
+  @apply bg-slate-500 h-auto p-[18px] border-b-[#fff] border-b-[1px] w-full fixed;
   @apply flex flex-row justify-between items-center;
 
   h1 {

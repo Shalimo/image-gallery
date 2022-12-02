@@ -1,5 +1,5 @@
 import { useState } from "react";
-const auth = "563492ad6f9170000100000112ea80bd3b5646778fec532774e48b71";
+const auth = "563492ad6f91700001000001d47e50555c46469eb1cf693bfd97be76";
 
 export const useGetImages = () => {
   const [category, setCategory] = useState("summer");

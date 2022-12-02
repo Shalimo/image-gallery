@@ -24,7 +24,7 @@ const Home = () => {
         onChange={setCategory}
         value={category}
       />
-      <div className={style.container}>
+      <div className={style.contentContainer}>
         <div className={style.imgContainer}>
           {concatImages?.map((item) => (
             <div className={style.image} key={item.id}>
