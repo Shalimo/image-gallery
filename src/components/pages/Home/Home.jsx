@@ -19,14 +19,12 @@ const Home = () => {
 
   return (
     <div>
-      <Header />
+      <Header
+        onKeyDown={onKeyDownHandler}
+        onChange={setCategory}
+        value={category}
+      />
       <div className={style.container}>
-        <input
-          onKeyDown={onKeyDownHandler}
-          placeholder="Search"
-          onChange={(e) => setCategory(e.target.value)}
-          value={category}
-        />
         <div className={style.imgContainer}>
           {concatImages?.map((item) => (
             <div className={style.image} key={item.id}>

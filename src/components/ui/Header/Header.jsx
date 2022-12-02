@@ -1,18 +1,15 @@
 import React from "react";
-import { useGetImages } from "../../../hooks/useGetImages";
 import style from "./Header.module.scss";
 
-const Header = () => {
-  const { category, setCategory, onKeyDownHandler } = useGetImages();
-
+const Header = ({ onKeyDown, onChange, value }) => {
   return (
     <div className={style.container}>
       <h1>Image gallery</h1>
       <input
-        onKeyDown={onKeyDownHandler}
+        onKeyDown={onKeyDown}
         placeholder="Search"
-        onChange={(e) => setCategory(e.target.value)}
-        value={category}
+        onChange={(e) => onChange(e.target.value)}
+        value={value}
       />
     </div>
   );
